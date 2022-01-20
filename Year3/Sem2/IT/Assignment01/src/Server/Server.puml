@@ -1,0 +1,138 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+: Server();
+repeat
+:startServing();
+repeat
+if(goOnCurrentClient()) then (yes)
+else (no)
+    stop;
+endif;
+if(type) then (0)
+    :closeCurrentClient();
+    stop;
+elseif(type) then (1)
+    :UniqueUser();
+    :decryptDetails();
+    :LockDB;
+    :ReadDB;
+    :UnlockDB;
+    if(Username Exist) then (yes)
+        ->UserName Exist;
+    else (No)
+        ->UserName Doesn't Exist;
+    endif
+    :PrepareDetailsToSend();
+    :ackClient();
+elseif(type) then (2)
+    :setPassword();
+    :decryptDetails();
+    :LockDB;
+    :writeDetailsToDatabase();
+    :UnlockDB;
+        :PrepareDetailsToSend();
+
+    :ackClient();
+
+elseif(type) then (3)
+    :authenticateUser();
+    :decryptDetails();
+    :LockDB;
+    if(UserExist) then (yes)
+        :loginAccepted();
+    else (No)
+        :loginRejected();
+    endif
+    :UnlockDB;
+        :PrepareDetailsToSend();
+
+    :ackClient();
+elseif(type) then (4)
+    :getAllData();
+    :decryptDetails();
+    :LockDB;
+    if(UserExist) then (yes)
+         :PrepareDetailsToSend;
+    else (No)
+         :User Doesn't Exist;
+    endif
+    :UnlockDB;
+        :PrepareDetailsToSend();
+
+    :ackClient();
+elseif(type) then (5)
+    :getParticularData();
+    :decryptDetails();
+    :LockDB;
+    if(UserExist) then (yes)
+        :PrepareDetailsToSend;
+    else (No)
+         :User Doesn't Exist;
+    endif
+    :UnlockDB;
+        :PrepareDetailsToSend();
+
+    :ackClient();
+
+elseif(type) then (6)
+    :putData();
+    :decryptDetails();
+    :LockDB;
+    :retrieveDataDB();
+    if(data) then (exist)
+        :ReplaceData();
+    else (Doesn't Exist)
+        :AddNewEntry();
+    endif;
+    :UnlockDB;
+        :PrepareDetailsToSend();
+
+    :ackClient();
+
+elseif(type) then (7)
+    :upgradeRole();
+    :decryptDetails();
+    :LockDB;
+    if(managerCheck) then (yes)
+        :upgradeCurrentUser();
+    else (No)
+        :ReportError();
+    endif;
+    :UnlockDB;
+        :PrepareDetailsToSend();
+
+    :ackClient();
+
+elseif(type) then (8)
+    :viewOtherData();
+    :decryptDetails();
+    :LockDB;
+    if(manager) then(yes)
+        :PrepareDetailsToSend();
+    else (no)
+         :ReportPermissionIssue();
+    endif;
+    :UnlockDB;
+        :PrepareDetailsToSend();
+
+    :ackClient();
+
+else(type) then (9)
+    :managerCheck();
+    :decryptDetails();
+    :LockDB;
+    if(manager) then(yes)
+        :Approval;
+    else (no)
+         :Denial;
+    endif;
+    :UnlockDB;
+        :PrepareDetailsToSend();
+
+    :ackClient();
+endif;
+repeat while(clientRequesting ?) is (yes) not (No)
+
+@enduml

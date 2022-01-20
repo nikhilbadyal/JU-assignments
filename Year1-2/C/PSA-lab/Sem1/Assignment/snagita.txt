@@ -1,0 +1,205 @@
+class Book{
+public:
+    // Constructor
+    Book() {}
+
+    static int bookCount;
+
+    //Friends
+    friend ostream & operator<<(ostream & , Book& );
+    friend istream & operator>>(istream & , Book& );
+
+
+    //Functions
+    void get_data();
+    const long int& returnBookId() {return bookId;}
+    int& returnCount() {return count;}
+    const string& returnSerial() {return serial;}
+
+protected:
+    long int bookId = 0 ;
+    string serial = " ";
+  /*  string title = " ";
+    string author = " ";
+    string publisher = " ";
+    int price = 0;*/
+    int count = 20;
+};
+
+class BookList{
+public:
+
+    // Static Member
+    Book book[10];
+
+    // Functions
+    void enterBooks();
+    int find_details(string  );
+    void checkAvailability();
+};
+
+class Member {
+public:
+
+    //Constructor
+    Member() {}
+
+    //Friends
+    friend ostream & operator<<(ostream & , Member& );
+    friend istream & operator>>(istream & , Member& );
+
+    //Functions
+    const long int& returnMemberId() {return memberId;}
+
+protected:
+
+    long int memberId = 0 ;
+    string name = " ";
+  /*  string email = " ";
+    string address = " ";*/
+};
+
+class Transaction{
+
+public:
+
+    //Constructor
+    Transaction() : b() {}
+
+    //Functions
+    static int transactionCount;
+    void update_transaction(Book& , bool);
+    void showTransaction();
+    int returnTransactionCount() {return transactionCount;}
+    bool returnReturned() {return returned;}
+    Book& returnBook() {return b;}
+
+protected:
+
+    Book b;
+    bool returned = true;
+};
+
+
+class Student : public Member{
+public:
+
+    //Constructors
+    Student() : Member() , t() {}
+
+    // Static members
+    static int studentCount;
+
+    //Functions
+    void get_data();
+    bool check_issued(string );
+    void showStudentTransaction();
+    int& returnCount(){return count;}
+
+    //Friendship
+
+    Transaction t[10] ;
+private:
+    int count = 0;
+};
+
+
+class StudentList{
+public:
+
+   // friend class MemberList;
+    Student student[10];
+    void issueBook(long int, int ,BookList &);
+    void returnBook(long int, int , BookList & );
+public:
+    StudentList() {}
+    void enterStudents();
+    void showStudent(int );
+};
+
+
+class Faculty : public Member{
+public:
+
+    //Constructors
+    Faculty() : Member() , t() {}
+
+    // Static members
+    static int facultyCount;
+
+    //Functions
+    void get_data();
+    bool check_issued(string );
+    void showFacultyTransaction();
+    //Friendship
+
+    Transaction t[10] ;
+    int& returnCount() {return count;}
+private:
+    int count = 0;
+};
+
+class FacultyList{
+public:
+
+    FacultyList()  {}
+    void enterFaculty();
+    void showFaculty(int );
+    void issueBook(long int,int,BookList &);
+    void returnBook(long int ,int,BookList &  );
+public:
+    Faculty faculty[10];
+
+};
+
+class MemberList{
+public:
+    MemberList() : f() , s(){}
+    FacultyList f;
+    StudentList s;
+    tuple<long int,int,int> verifyMember();
+    void issueRequest(BookList &);
+    void returnRequest(BookList &);
+    void enterMember();
+    void showMemberDetails();
+};
+
+struct Menu
+{
+    int ch;
+    void printMenu()
+    {
+        MemberList ml;
+        BookList bl;
+        while(1)
+        {
+            cout<<"\n\n";
+            cout<<"\n1.Add books";
+            cout<<"\n2.Add member";
+            cout<<"\n3.Check book availability";
+            cout<<"\n4.Make an issue request";
+            cout<<"\n5.Make an issue Return request";
+            cout<<"\n6.Show  member detail.";
+            cout<<"\nYour choice : ";
+            cin>>ch;
+            switch(ch)
+            {
+                case 1:bl.enterBooks();
+                       break;
+                case 2: ml.enterMember();
+                       break;
+                case 3:bl.checkAvailability();
+                       break;
+                case 4:ml.issueRequest(bl);
+                       break;
+                case 5:ml.returnRequest(bl);
+                       break;
+                case 6:ml.showMemberDetails();
+                        break;
+                case 7: exit(0);
+                default:cout<<"Wrong choice ";
+                          break;
+            }
+        }
+    }
+};

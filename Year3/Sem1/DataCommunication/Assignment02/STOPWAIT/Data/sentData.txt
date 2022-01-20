@@ -1,0 +1,23 @@
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.

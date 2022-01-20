@@ -1,0 +1,59 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:createTable;
+if(create) then (true)
+    if(TEMPERORY) then (true)
+    else (false)
+    endif;
+    if(TABLE) then (true)
+        if(IF NOT EXISTS) then (true)
+        else (false)
+        endif;
+        if(tableName) then (true)
+            if(Left Paren) then (true)
+                repeat
+                if(colName) then (true)
+                    if(dataType) then (true)
+                    else (false)
+                        :throw Error;
+                        stop;
+                    endif;
+
+                else (false)
+                    :throw Error;
+                    stop;
+                endif;
+                repeat while (commA?) is (yes)
+                -> no;
+                if(Right Paren) then (true)
+                    if(SEMI COLON) then (true)
+                        : Success;
+                         stop;
+                    else (false)
+                        :throw Error;
+                        stop;
+                    endif;
+                else (false)
+                    :throw Error;
+                    stop;
+                endif;
+            else (false)
+                :throw Error;
+                stop;
+            endif;
+        else (false)
+            :throw Error;
+            stop;
+        endif;
+
+    else (false)
+        : throw Error;
+        stop;
+    endif;
+else (false)
+    : throw Error;
+    stop;
+
+@enduml

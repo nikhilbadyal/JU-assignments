@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+title ClientSide\n
+
+start
+if (connect) then (Sign In)
+    :JoinPage();
+   :EnterUserName;
+   :EnterRoomNumber;
+   if(RoomExist) then (Yes)
+     :Join Room;
+   else (NO)
+     :Creat Room;
+   endif
+   :Successfully Joined;
+   :Enter Chat Page;
+   if(chat) then (Do Chatting)
+   else(exit)
+        if(logOut) then(yes)
+        stop;
+        else(keepChatting)
+        endif;
+   endif
+   stop
+else (Exit)
+    stop
+endif
+
+@enduml

@@ -1,0 +1,10 @@
+IO Error while creating output Stream. Code 10
+IO Error while creating input Stream. Code 11
+IO Error while opening port - Code 12
+Illegal Port number - Code 13
+IO Error while waiting for connection - Code 14
+IO Error while writing to output stream. Code 15
+IO Error while resetting the output stream. Code 16
+IO Error while reading from input stream. Code 17
+IO Error while creating socket. Code 18
+Serialization issue code 19

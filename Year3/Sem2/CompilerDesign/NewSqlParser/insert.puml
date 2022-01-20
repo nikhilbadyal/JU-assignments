@@ -1,0 +1,72 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:insert;
+if(INSERT) then (true)
+     if(INTO) then (true)
+    else (false)
+    endif;
+        if(tableName) then (true)
+        else (false)
+            :throw Error;
+            stop;
+        endif;
+        if(Left Paren) then (true)
+            repeat
+            if(columnName) then (true)
+            else (false)
+                :throw Error;
+                stop;
+            endif;
+            repeat while(comma?)is (yes)
+        else (false)
+            :throw Error;
+            stop;
+        endif;
+       if(RIGHT PAREN) then (true)
+            if(VALUES ) then (true)
+                if(Left Paren) then (true)
+                   repeat
+                   if(uid) then (true)
+                   else (false)
+                       :throw Error;
+                       stop;
+                   endif;
+                   repeat while(comma?)is (yes)
+               else (false)
+                   :throw Error;
+                   stop;
+               endif;
+           else (false)
+               :throw Error;
+               stop;
+           endif;
+           if(RIGHT PAREN) then(yes)
+                if(SEMI COLON) then(yes)
+                       : Success;
+                       stop;
+                  else (false)
+                       : throw Error;
+                       stop;
+                  endif;
+          else (false)
+               : throw Error;
+               stop;
+          endif;
+
+
+       else (false)
+           :throw Error;
+           stop;
+       endif;
+else (false)
+    : throw Error;
+    stop;
+
+@enduml
+
+
+stop
+
+@enduml

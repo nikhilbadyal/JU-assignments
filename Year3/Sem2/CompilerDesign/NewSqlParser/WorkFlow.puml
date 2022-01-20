@@ -1,0 +1,73 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:getQuery;
+:Lexer(query) Constructor;
+:Parser(lexer) Constructor;
+: parseQuery() ;
+if(sqlStatements.isEmpty) then (false)
+    : sqlStatement;
+    if(CREATE) then (true)
+        : DDL;
+        if(table) then(true)
+            : createTable;
+            stop;
+        elseif(database) then(true)
+            : create database;
+            stop;
+
+        else(false)
+            : throw Error;
+            stop;
+        endif;
+    else (false)
+        :  DML;
+        if(select) then(yes)
+            : selectQuery;
+            stop;
+
+        elseif(insert) then(yes)
+            : insertQuery;
+            stop;
+
+        else (false)
+             : throw Error;
+             stop;
+        endif;
+    endif;
+
+else (true)
+    : exit;
+   /'
+if (Page.onSecurityCheck) then (true)
+  :Page.onInit();
+  if (isForward?) then (no)
+    :Process controls;
+    if (continue processing?) then (no)
+      stop
+    endif
+
+    if (isPost?) then (yes)
+      :Page.onPost();
+    else (no)
+      :Page.onGet();
+    endif
+    :Page.onRender();
+  endif
+else (false)
+endif
+
+if (do redirect?) then (yes)
+  :redirect process;
+else
+  if (do forward?) then (yes)
+    :Forward request;
+  else (no)
+    :Render page template;
+  endif
+endif'/
+
+stop
+
+@enduml

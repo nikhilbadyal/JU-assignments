@@ -1,0 +1,104 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+title ClientSide\n
+
+start
+:connect();
+
+if (choice 1) then (signup)
+  :signup;
+  repeat
+    :EnterUserName();
+  repeat while (unique Name?) is (no)
+        ->yes;
+  repeat
+    :EnterPassword();
+  repeat while (Strong Password?) is (no)
+        ->yes;
+  :signupDone;
+  stop
+elseif(choice 2) then (login)
+    :Login;
+      repeat
+        :EnterUserName();
+        :EnterPassword();
+      repeat while (authenticatedUser?) is (no)
+         ->yes;
+      :LoginDone;
+      repeat : Loop;
+      if (Manager) then (true)
+        if(viewData)
+          if(allData) then (yes)
+          ->RequestAllData();
+           :ReadWholeData();
+           :Print();
+          else (no)
+          ->RequestParticularData();
+          :AskForKey();
+          :ReadParticularData();
+          :Print();
+          endif;
+        elseif(putData)
+        :AskForKey();
+        :AskForValue();
+        :prepareRequestPackage();
+        :encryptData();
+        if(WaitForResponse()) then (Stored)
+        :printSucMsg;
+        else (Error)
+          :printErrMsg;
+        endif;
+        elseif(OthersData)
+        :AskForUserName();
+        :prepareRequestPackage();
+        if(WaitForResponse()) then (Suc Read)
+          :printData;
+          else (Error)
+            :printErrMsg;
+          endif;
+        else (Exit)
+        endif
+      else (false)
+        if(viewData)
+        if(allData) then (yes)
+            ->RequestAllData();
+             :ReadWholeData();
+             :Print();
+            else (no)
+            ->RequestParticularData();
+            :AskForKey();
+            :ReadParticularData();
+            :Print();
+            endif;
+        elseif(putData)
+        :AskForKey();
+          :AskForValue();
+          :prepareRequestPackage();
+          :encryptData();
+          if(WaitForResponse()) then (Stored)
+          :printSucMsg;
+          else (Error)
+            :printErrMsg;
+          endif;
+        elseif(UpgradeRole)
+        :AskForManagerDetails();
+        :SendDetailsToServer();
+          if(WaitForResponse()) then (Approved)
+          :printSucMsg;
+          else (Denied)
+          :Print Permission Issue;
+          endif;
+        else(Exit)
+        endif
+      endif
+      repeat while(GoOn?) is (yes)
+      ->no;
+    stop
+elseif(choice 3) then (exit)
+    stop
+else (Wrong choice)
+endif
+stop
+
+@enduml

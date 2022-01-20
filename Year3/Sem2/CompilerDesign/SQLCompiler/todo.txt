@@ -1,0 +1,7 @@
+uid define 
+col_name 
+table_name 
+dataType 
+STRING_LITERAL
+defValue
+column_name 

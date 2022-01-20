@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+
+repeat
+repeat while(Connection Established) is (No)
+    ->Connection done;
+    repeat
+    if (SomeOne disconnected) then (yes)
+         :search DB for user whereabouts;
+         :get Socket Id;
+         : broadcast msg to existing user that SomeOne disconnected;
+    else(no)
+    endif;
+    repeat while(Listen for disconnection)
+
+stop
+
+@enduml

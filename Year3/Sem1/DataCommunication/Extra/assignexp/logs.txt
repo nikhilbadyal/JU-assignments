@@ -1,0 +1,13 @@
+Started Frame writing at Thu Nov 19 12:40:05 IST 2020
+Started Frame writing at Thu Nov 19 12:56:48 IST 2020
+Station 3 frame 0 is successful.
+Started Frame writing at Thu Nov 19 12:57:56 IST 2020
+Station 4 frame 0 is successful.
+Started Frame writing at Thu Nov 19 20:59:28 IST 2020
+Station 3 frame 0 is successful.
+Station 3 frame 1 is successful.
+Started Frame writing at Thu Nov 19 21:41:56 IST 2020
+Station 2 frame 0 is successful.
+Station 2 frame 1 is successful.
+Station 2 frame 2 is successful.
+Station 2 frame 3 is successful.

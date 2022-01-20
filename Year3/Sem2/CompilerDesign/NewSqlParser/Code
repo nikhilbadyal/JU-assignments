@@ -1,0 +1,194 @@
+A = B
+B = C
+B = E
+B = S'
+C = create  D
+D = H
+D = G
+E = insert into L Y ;
+G = M table  L N ;
+H = J L ;
+I = if not exists
+I = ''
+J = database
+J = schema
+L = a
+L = _ L
+L = ' L '
+M = temperory
+M = ''
+N = ( O N )
+N = , O N
+N = ''
+O = L P
+O = Q
+P = int
+P = char
+P = varchar
+P = text
+P = bool
+Q = primary key ( R )
+Q = foreign key ( R )
+R = L R
+R = , L
+R = ''
+S' = select T U ;
+T = *
+T = R
+U = from L W
+W = where X
+W = ''
+Y = ( R ) Y
+Y = values  ( R )
+X = L Z
+Z = WHEREOPR Z
+Z = in ( O' )
+O' = L O'
+O' = , L O'
+O' = ''
+Z = L Z
+Z = ''
+WHEREOPR =  between
+WHEREOPR =  like
+WHEREOPR =  and
+WHEREOPR = >
+WHEREOPR = <
+WHEREOPR = =
+X' = =
+X' = <
+X' = >
+
+
+
+A ::= B
+B ::= C
+B ::= E
+B ::= S'
+C ::= create  D
+D ::= H
+D ::= G
+E ::= insert into L Y ;
+G ::= M table  L N ;
+H ::= J L ;
+I ::= if not exists
+I ::= ''
+J ::= database
+J ::= schema
+L ::= a
+L ::= _ L
+L ::= ' L '
+M ::= temperory
+M ::= ''
+N ::= ( O N )
+N ::= , O N
+N ::= ''
+O ::= L P
+O ::= Q
+P ::= int
+P ::= char
+P ::= varchar
+P ::= text
+P ::= bool
+Q ::= primary key ( R )
+Q ::= foreign key ( R )
+R ::= L R
+R ::= , L
+R ::= ''
+S' ::= select T U ;
+T ::= *
+T ::= R
+U ::= from L W
+W ::= where X
+W ::= ''
+Y ::= ( R ) Y
+Y ::= values  ( R )
+X ::= L Z
+Z ::= WHEREOPR Z
+Z ::= in ( O' )
+O' ::= L O'
+O' ::= , L O'
+O' ::= ''
+Z ::= L Z
+Z ::= ''
+WHEREOPR ::=  between
+WHEREOPR ::=  like
+WHEREOPR ::=  and
+WHEREOPR ::= >
+WHEREOPR ::= <
+WHEREOPR ::= =
+X' ::= =
+X' ::= <
+X' ::= >
+
+
+A -> B
+B -> C
+B -> E
+B -> S'
+C -> create  D
+D -> H
+D -> G
+E -> insert into L Y ;
+G -> M table  L N ;
+H -> J L ;
+I -> if not exists
+I -> e
+J -> database
+J -> schema
+L -> a
+L -> _ L
+L -> ' L '
+M -> temperory
+M -> e
+N -> ( O N )
+N -> , O N
+N -> e
+O -> L P
+O -> Q
+P -> int
+P -> char
+P -> varchar
+P -> text
+P -> bool
+Q -> primary key ( R )
+Q -> foreign key ( R )
+R -> L R
+R -> , L
+R -> e
+S' -> select T U ;
+T -> *
+T -> R
+U -> from L W
+W -> where X
+W -> e
+Y -> ( R ) Y
+Y -> values  ( R )
+X -> L Z
+Z -> WHEREOPR Z
+Z -> in ( O' )
+O' -> L O'
+O' -> , L O'
+O' -> e
+Z -> L Z
+Z -> e
+WHEREOPR ->  between
+WHEREOPR ->  like
+WHEREOPR ->  and
+WHEREOPR -> >
+WHEREOPR -> <
+WHEREOPR -> =
+X' -> =
+X' -> <
+X' -> >
+
+
+
+
+S ::= A B
+S ::= t t B
+S ::= L B
+L ::= L'
+A ::= t
+B ::= a
+L' ::= r L'
+L' ::= ϵ

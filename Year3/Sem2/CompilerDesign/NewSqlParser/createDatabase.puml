@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:createDatabase;
+if(create) then (true)
+    if(DATABASE) then (true)
+    elseif(SCHEMA) then (true)
+    else (false)
+        : throw Error;
+        stop;
+    endif;
+        if(IF NOT EXISTS) then (true)
+        else (false)
+        endif;
+        if(DBName) then (true)
+           if(SEMI COLON) then (true)
+               : Success;
+                stop;
+           else (false)
+               :throw Error;
+               stop;
+           endif;
+        else (false)
+            :throw Error;
+            stop;
+        endif;
+
+else (false)
+     : throw Error;
+     stop;
+endif;
+
+@enduml

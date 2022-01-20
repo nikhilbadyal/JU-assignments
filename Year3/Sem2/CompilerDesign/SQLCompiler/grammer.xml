@@ -1,0 +1,24 @@
+<structure>
+    <type>grammar</type>
+    <!--The list of productions.-->
+    <production>
+        <left>ParseQuery</left>
+        <right>SQLStatements</right>
+    </production>
+    <production>
+        <left>A</left>
+        <right>aAc</right>
+    </production>
+    <production>
+        <left>A</left>
+        <right/>
+    </production>
+    <production>
+        <left>B</left>
+        <right>bB</right>
+    </production>
+    <production>
+        <left>B</left>
+        <right>c</right>
+    </production>
+</structure>

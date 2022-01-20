@@ -1,0 +1,7 @@
+A graph G is an ordered pair (V (G), E(G)) consisting of a set V (G) of vertices
+and a set E(G), disjoint from V (G), of edges, together with an incidence function
+ψG that associates with each edge of G an unordered pair of (not necessarily
+distinct) vertices of G. If e is an edge and u and v are vertices such that ψG(e) =
+{u, v}, then e is said to join u and v, and the vertices u and v are called the ends
+of e. We denote the numbers of vertices and edges in G by v(G) and e(G); these
+two basic parameters are called the order and size of G, respectively.

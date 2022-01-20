@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+
+repeat
+repeat while(Connection Established) is (No)
+    ->Connection done;
+    :BroadCast to All users That someone Joined;
+    :send Greeting To joined user;
+    repeat
+    repeat
+    repeat while(Someone send a message) is (no)
+        ->got message from any user;
+     repeat
+    :processMsg();
+    if(msg has @) then (Dont broadcast)
+    :extract the name of intended users;
+    :query Database for the user();
+    if(user exist) then (yes)
+    :addItRecipientList;
+    else(No)
+    :Ignore;
+    endif
+
+    else (broadcast msg)
+    endif
+    :sendMessage;
+    repeat while(Someone send a message) is (no)
+stop
+
+@enduml

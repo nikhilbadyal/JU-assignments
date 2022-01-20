@@ -1,0 +1,4 @@
+sangita -- lexer
+aman -- select ,follow , parser(insert) , cfg( insert) 
+kausal - first , parser (create) , cfg ( create)
+nikhil -- grammer (ll1) , grammerCfg( insert ), parser(select)

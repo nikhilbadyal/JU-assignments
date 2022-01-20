@@ -1,0 +1,179 @@
+ParseQuery 
+: SQLStatements
+| €
+;
+SQLStatements
+ : sqlStatement SQLStatements
+	| €
+;
+sqlStatement 
+: ddlStatement  
+| dmlStatement
+;
+ddlStatement 
+:  createDatabase 
+| createTable
+;
+dmlStatement 
+: select
+ | insert
+;
+createDatabase
+ : CREATE dbFormat ifNotExist? uid createDbOptions
+;
+dbFormat
+	: DATABASE
+	| SCHEMA 
+	;
+ifNotExist
+: IF NOT EXISTS
+| €
+;
+	
+createDbOptions 
+: COLLATE uid createDbOptions
+| ENCRYPTION choice createDbOptions
+| €
+;
+choice 
+: Y 
+|N
+;
+
+createTable
+ :  CREATE temporary TABLE ifNotExist uid createDefinations
+;
+
+temporary 
+	: TEMPERORY
+	| €
+	;
+createDefinations 
+: ‘(‘createDefination createDefinations ‘)’;
+| ‘,’ createDefination createDefinations
+| €
+;
+createDefination
+ : uid columnDef
+| tableOptions
+;
+columnDef
+ : datatype columnConstrains
+;
+datatype
+	: INT
+	| CHAR
+	| VARCHAR
+	| TEXT
+	| BOOL
+
+columnConstrains
+ : NULL columnConstrains
+| NOT NULL columnConstrains
+| columnConstrains KEY columnConstrains
+| UNIQUE columnConstrains columnConstrains
+| AUTO_INCREMENT columnConstrains
+| DEFAULT defValue columnConstrains
+| COMMENT STRING_LITERAL columnConstrains
+| KEY
+| PRIMARY
+| €
+;
+
+tableOptions:
+	:  PRIMARY KEY ‘(’ column_name’)’
+	| FOREIGN KEY ‘(’ column_name’)’
+;
+	   
+select 
+: selectQuery
+;
+
+selectQuery 
+: SELECT selectElements fromClause limitClause
+;
+selectElements
+: star 
+| selectElement selectElements 
+| ‘,’ selectElement selectElements
+| €
+;
+star 
+: ‘*’
+;
+selectElement
+: uid
+;
+fromClause 
+: FROM uid whereClause 
+;
+whereClause
+: WHERE expression
+| €
+	;
+limitClause
+ : LIMIT uid
+| €
+;
+Insert
+: INSERT into uid insertOpt
+;
+into 
+: INTO 
+| €
+;
+insertOpt
+ : list insertOpt
+| VALUES list
+| €
+;
+list:
+	: (uid list)
+	| ‘,’ uid
+	| €
+	; 
+expression 
+	: NOT expression
+	| predicate
+	;
+predicate
+	: predicate NOT? IN '(' selectList ')'
+	| predicate NOT? BETWEEN predicate AND predicate
+	| predicate NOT? LIKE predicate 
+	| atomicVal
+	;
+atomicVal
+	: uid;
+uid
+	: [a-zA-Z]+;
+	| NUM
+	| SINGLE_QUOTE uid SINGLE_QUOTE
+	
+selectList
+	: uid selectList
+	| ‘,’ uid selectList
+	| €
+	;
+notOpr 
+: NOT 
+| !
+;
+
+
+integer
+: ^[1-9][0-9]  integer
+| €
+;
+logicalOpr
+	: AND
+	| OR
+;
+comparisonOpr
+	: ‘=’
+	| ‘<’
+	| ‘>’
+	| ‘>=’
+	| ‘<=’
+; 
+
+

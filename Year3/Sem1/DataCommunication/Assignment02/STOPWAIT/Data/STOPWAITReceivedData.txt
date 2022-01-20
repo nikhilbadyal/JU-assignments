@@ -1,0 +1,246 @@
+Started Frame writing at Mon Nov 23 14:00:58 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Hints: Some points you may consider in your design.
+Following functions may be required in Sender.
+Send: This function, invoked every time slot at the sender, decides if the sender should (1) do nothing,
+(2) retransmit the previous data frame due to a timeout, or (3) send a new data frame. Also, you have to
+consider current network time measure in time slots.
+Recv_Ack: This function is invoked whenever an ACK packet is received. Need to consider network time
+when the ACK was received, ack_num and timestamp are the sender's sequence number and timestamp
+that were echoed in the ACK. This function must call the timeout function.
+Timeout: This function should be called by ACK method to compute the most recent data packet's
+round-trip time and then recompute the value of timeout.
+Following functions may be required in Receiver.
+Recv: This function at the receiver is invoked upon receiving a data frame from the sender.
+Send_Ack: This function is required to build the ACK and transmit.
+Started Frame writing at Mon Nov 23 14:05:34 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Hints: Some points you may consider in your design.
+Following functions may be required in Sender.
+Send: This function, invoked every time slot at the sender, decides if the sender should (1) do nothing,
+(2) retransmit the previous data frame due to a timeout, or (3) send a new data frame. Also, you have to
+consider current network time measure in time slots.
+Recv_Ack: This function is invoked whenever an ACK packet is received. Need to consider network time
+when the ACK was received, ack_num and timestamp are the sender's sequence number and timestamp
+that were echoed in the ACK. This function must call the timeout function.
+Timeout: This function should be called by ACK method to compute the most recent data packet's
+round-trip time and then recompute the value of timeout.
+Following functions may be required in Receiver.
+Recv: This function at the receiver is invoked upon receiving a data frame from the sender.
+Send_Ack: This function is required to build the ACK and transmit.
+Started Frame writing at Mon Nov 23 14:11:55 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Hints: Some points you may consider in your design.
+Following functions may be required in Sender.
+Send: This function, invoked every time slot at the sender, decides if the sender should (1) do nothing,
+(2) retransmit the previous data frame due to a timeout, or (3) send a new data frame. Also, you have to
+consider current network time measure in time slots.
+Recv_Ack: This function is invoked whenever an ACK packet is received. Need to consider network time
+when the ACK was received, ack_num and timestamp are the sender's sequence number and timestamp
+that were echoed in the ACK. This function must call the timeout function.
+Timeout: This function should be called by ACK method to compute the most recent data packet's
+round-trip time and then recompute the value of timeout.
+Following functions may be required in Receiver.
+Recv: This function at the receiver is invoked upon receiving a data frame from the sender.
+Send_Ack: This function is required to build the ACK and transmit.
+Started Frame writing at Mon Nov 23 14:34:47 IST 2020
+Started Frame writing at Mon Nov 23 14:35:22 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Hints: Some points you may consider in your design.
+Following functions may be required in Sender.
+Send: This function, invoked every time slot at the sender, decides if the sender should (1) do nothing,
+(2) retransmit the previous data frame due to a timeout, or (3) send a new data frame. Also, you have to
+consider current network time measure in time slots.
+Recv_Ack: This function is invoked whenever an ACK packet is received. Need to consider network time
+when the ACK was received, ack_num and timestamp are the sender's sequence number and timestamp
+that were echoed in the ACK. This function must call the timeout function.
+Timeout: This function should be called by ACK method to compute the most recent data packet's
+round-trip time and then recompute the value of timeout.
+Following functions may be required in Receiver.
+Recv: This function at the receiver is invoked upon receiving a data frame from the sender.
+Send_Ack: This function is required to build the ACK and transmit.
+Started Frame writing at Mon Nov 23 14:55:45 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.xxxxxx
+Started Frame writing at Mon Nov 23 14:56:20 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Started Frame writing at Mon Nov 23 14:56:54 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Rece-t.xxxxxxxx are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 E
+Started Frame writing at Mon Nov 23 14:57:58 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Rece-t.xxxxxxxx are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 E
+Started Frame writing at Mon Nov 23 14:59:08 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+
+Started Frame writing at Mon Nov 23 15:02:34 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+
+Started Frame writing at Mon Nov 23 15:03:06 IST 2020
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+Submission due: 4-8 February 2019
+Sender, Receiver and Channel all are independent processes. There may be multiple Transmitter and
+Receiver processes, but only one Channel process. The channel process introduces random delay and/or
+bit error while transferring frames. Define your own frame format or you may use IEEE 802.3 Ethernet
+frame format.
+Assignment 2: Implement three data link layer protocols, Stop and Wait, Go Back N Sliding
+Window and Selective Repeat Sliding Window for flow control.
+

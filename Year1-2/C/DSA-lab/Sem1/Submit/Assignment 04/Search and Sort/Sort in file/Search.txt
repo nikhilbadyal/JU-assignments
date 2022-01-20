@@ -1,0 +1,4 @@
+insertion sort takes -- c*n^2'
+merge sort take c*n*loh n .
+while insertion is faster for smaller input but at some point merge outcross the merge sort.
+and then merge works faster. 

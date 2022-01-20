@@ -1,0 +1,86 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Client
+class ClientMain
+class CommonObj
+class Database
+class ClientHandler
+class Server
+class ServerMain
+class CaesarCipher
+class PasswordChecker
+class Data
+
+Client : Client(String host, int port)
+Client : checkUniqueUser(String user)
+Client : setPassword(String username, String password)
+Client : authenticateUser(String username, String password)
+Client : signup()
+Client : login()
+Client : getAllData(String username)
+Client : printParticularData(String username)
+Client : viewData(String username)
+Client : putData(String username)
+Client : upgradeRole(String username)
+Client : viewOtherData(String username)
+Client : processCommands(String username)
+Client : stop()
+Client : connect()
+Client : menu()
+
+
+ClientMain : main(String[] args)
+
+Data : Data()
+Data : get(String key)
+Data : getData()
+Data : getRole()
+
+Database : Database()
+Database : getUserPassword()
+Database : getDataBase()
+
+ServerMain : main(String[] args)
+Server : startServing()
+Server :  Server(int portNumber, int maxClients)
+
+ClientHandler : ClientHandler(Socket socket, Database database)
+ClientHandler : checkUniqueUser(String username)
+ClientHandler : setPassword(String username, String password)
+ClientHandler : authenticateUser(String username, String password,boolean isEncrypted)
+ClientHandler : getAllData(String username)
+ClientHandler : getParticularData(String username, String key)
+ClientHandler : putData(String username, String key, String value)
+ClientHandler : upgradeRole(String clientUsername, String managerUsername, String managerPassword)
+ClientHandler : viewOtherData(String managerUsername, String otherUsername)
+ClientHandler : managerCheck(String userName)
+ClientHandler : start()
+ClientHandler : run()
+
+CaesarCipher : encrypt(String str, int shift)
+
+PasswordChecker : isStrong(String password)
+
+CommonObj : CommonObj()
+ CommonObj : checkUniqueUser(String username)
+CommonObj : setPassword(String username, String password)
+CommonObj : authenticateUser(String username, String password)
+CommonObj : getAllData(String username)
+CommonObj : getParticularData(String username, String key)
+CommonObj : getParticularData(String value)
+CommonObj : getMessage()
+CommonObj : setAck(String ack)
+CommonObj : getAck()
+CommonObj : sendAllData(Data data)
+CommonObj : getAllData()
+CommonObj : createPutData(String username, String key, String value)
+CommonObj : createUpgradeRole(String clientUsername, String username, String password)
+CommonObj : createViewOtherData(String managerUsername, String clientUsername)
+CommonObj : sendViewOtherData(Data data)
+CommonObj : getViewOtherData()
+CommonObj : getType()
+CommonObj : createStop()
+CommonObj : managerCheck(String username)
+
+@enduml

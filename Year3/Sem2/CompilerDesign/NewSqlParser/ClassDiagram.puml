@@ -1,0 +1,118 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class Token {
+
+    virtual ~Token()
+    explicit Token(Type type, std::string value )
+    Token(const Token &other)
+
+    Reserved_Tokens type
+    std::string value
+    int getNumber() const 
+    std::string getId() const 
+
+
+}
+class Lexer{
+    int lineNumber 
+    int columnNumber 
+    char temp[BUF_SIZE]{}
+    char *curToken
+    hash table of  keywords
+    hash table of  singleOperator
+    hash table of  operators
+    std::string query
+    
+    
+     
+    void initReserve()
+     
+    explicit Lexer(const std::string &query) 
+     
+    int getLineNumber() 
+     
+    int getColumnNumber()
+     
+    Token advance()
+     
+     
+    Token Keyword()
+     
+    Token Digit()
+     
+    Token Operator()
+     
+    bool isOperator() 
+}
+
+class Parser {
+
+    explicit Parser(Lexer &lexer) 
+    void parseQuery()
+    Lexer &lexer
+    Token lookAhead
+    int columnNumber
+    int lineNumber
+    Array  dataTypes
+    array columnConstrainsVal
+    Array comparisonOpr 
+
+    bool match(Type) const
+    SqlType getStatementType() const
+    void sqlStatement()
+    void eat(Type)
+    void sqlStatements()
+    void ddlStatement()
+    void dmlStatement()
+    void advance()
+    void createTable()
+    void createDatabase()
+    void selectQuery()
+    void insertQuery()
+    void ifNotExist()
+    std::string uid()
+    void createTableDefinitions()
+    void createDbOptions()
+    void selectElements()
+    void fromClause() 
+    void groupByClause() const 
+    void orderByClause() const 
+    void limitClause() const 
+    void insertOptions()
+    void createTableDefination()
+    void columnDef()
+    void tableOptions()
+    void dataType()
+    void columnConstrains()
+    void into()
+    void columnList()
+    void insertList()
+    void choice()
+    void selectElement()
+    void whereClause()
+    void expression()
+    void predicate()
+    void selectList()
+    std::string likeUid()
+    void atomicVal()
+}
+
+
+Lexer <|-- Token
+Parser <|-- Lexer
+
+
+enum Reserved_Tokens {
+    ID, NUM, CREATE, TABLE, INT, CHAR, VARCHAR, TEXT, DEFAULT,
+    BOOL, FLOAT, DOUBLE, DATE, PRIMARY, KEY, INSERT,
+    INTO, VALUES, DELETE, FROM, WHERE, SELECT, ASSIGN, LT, GT, NEQ, EQ,
+    GEQ, LEQ, PLUS, MINUS, MUL, DIV, AND, OR, NOT, L_PAREN, R_PAREN,
+    COMMA, SEMICOLON, END, NONE, DATABASE, SCHEMA, TEMPORARY, IF,
+    EXISTS, FOREIGN, LIKE, BETWEEN, IN, COLLATE, ENCRYPTION, Y,
+    N, UNIQUE, AUTO_INCREMENT, COMMENT, STAR, SINGLE_QUOTE,PERCENT,UNDER_SCORE
+}
+
+
+@enduml

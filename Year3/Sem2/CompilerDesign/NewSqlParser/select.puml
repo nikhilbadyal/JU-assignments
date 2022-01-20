@@ -1,0 +1,119 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:selectQuery;
+if(SELECT) then (true)
+    repeat
+
+    if(STAR) then (true)
+        : Select all;
+    elseif (colName)
+    else
+        :throw Error;
+        stop;
+    endif;
+    repeat while (comma?) is (yes)
+    -> no;
+    if(FROM) then (true)
+        if(tableName) then (true)
+        else (false)
+            :throw Error;
+            stop;
+        endif;
+        if(WHERE) then (true)
+            if(uid) then (true)
+                if(IN) then (yes)
+                    if(Left Paren) then (true)
+                        repeat
+                        if(uid) then (true)
+                        else (false)
+                            :throw Error;
+                            stop;
+                        endif;
+                        repeat while(comma?)is (yes)
+                    else (false)
+                        :throw Error;
+                        stop;
+                    endif;
+                   if(RIGHT PAREN) then (true)
+                       : Success;
+                        stop;
+                   else (false)
+                       :throw Error;
+                       stop;
+                   endif;
+                elseif(LIKE) then (yes)
+                   if(SINGLE QUOTE) then (true)
+                   else (false)
+                       :throw Error;
+                       stop;
+                   endif;
+                  if(uid) then (true)
+                      
+                  else (false)
+                      :throw Error;
+                      stop;
+                  endif;
+                 if(SINGLE QUOTE) then (true)
+                     : Success;
+                      stop;
+                 else (false)
+                     :throw Error;
+                     stop;
+                 endif;
+                elseif(BETWEEN) then (yes)
+                if(uid) then (true)
+                   
+                else (false)
+                   :throw Error;
+                   stop;
+                endif;
+              if(AND) then (true)
+                  
+              else (false)
+                  :throw Error;
+                  stop;
+              endif;
+             if(columnName) then (true)
+                 : Success;
+                  stop;
+             else (false)
+                 :throw Error;
+                 stop;
+             endif;
+                elseif(SEMI COLON) then(yes)
+                    : success;
+                    stop;
+                elseif(Operator) then(yes)
+                   if(uid) then (true)
+                       : Success;
+                       stop;
+                   else (false)
+                       :throw Error;
+                       stop;
+                   endif; 
+                else (no)
+                    : throw Error;
+                    stop;
+                endif;
+            else (false)
+                :throw Error;
+                stop;
+            endif;
+        endif;
+
+    else (false)
+        : throw Error;
+        stop;
+    endif;
+else (false)
+    : throw Error;
+    stop;
+
+@enduml
+
+
+stop
+
+@enduml

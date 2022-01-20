@@ -1,0 +1,10 @@
+ExifTool "-fileCreateDate<Filename" "-fileModifyDate<Filename"  "-datetimeoriginal<Filename" -overwrite_original -r .
+
+
+exiftool '-filename<DateTimeOriginal' -d "IMG_%Y%m%d_%H%M%S_%%c.%%e" -overwrite_original -r .
+
+ExifTool "-FileCreateDate<FileModifyDate" "-datetimeoriginal<FileModifyDate" -overwrite_original -r .
+
+ExifTool "-FileCreateDate<fileModifyDate" "-datetimeoriginal<fileModifyDate"  -overwrite_original -r .
+
+"-fileModifyDate<filenamefilename"
